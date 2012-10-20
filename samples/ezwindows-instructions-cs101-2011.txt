@@ -1,0 +1,37 @@
+
+Instructions for installing and using EzWindows package:
+
+1. Download the tar file ezwcs101.tar.gz into your 
+   home directory (If the download brings this tar file 
+   to any other directory, move or copy it to your 
+   home directory. You can check which is your home
+   directory by typing the command:   echo $HOME)
+
+2. Go to your home directory, if you are not already there.
+   (You can simply use the command: cd)
+
+3. Untar and unzip this file by typing the command
+   tar -xvf ezwcs101.tar.gz
+
+4. This will create a directory named 'ezwcs101' inside
+   your home directory
+
+5. You can now compile and run your graphics programs 
+   using Ezwindows package. However, the normal command
+   cannot be used to compile these programs, since they will
+   have to be 'linked' to other libraries which are part of 
+   the ezwindows package. A shell script named "compile" has been 
+   provided in the package (located in the ezcs101 directory)
+   This text file must be copied to your working directory, where
+   you are creating and compiling your graphics programs.
+
+   Alternately, you can go to the 'samples' subdirectory, where 
+   a copy of this script has already been placed, and can run 
+   all of your programs there.
+ 
+6. To compile and execute your programs, for example, program s1.cpp
+   in the samples subdirectory, use the following commands
+
+   $ ./compile s1   (Note: you should not type s1.cpp)
+   $ ./s1           (Note: You should not type ./a.out)
+

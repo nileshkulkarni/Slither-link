@@ -1,0 +1,9 @@
+#include "ezwin.h"
+// Create a 10 x 4 window
+SimpleWindow HelloWindow("Hello EzWindows", 10.0, 4.0, Position(15.0, 6.0));
+// ApiMain(): create a window and display greeting
+int ApiMain() {
+  HelloWindow.Open();
+  HelloWindow.RenderText(5.0, 10.0, "namaste CS101 students");
+  return 0;
+}

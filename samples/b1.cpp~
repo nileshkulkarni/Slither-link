@@ -1,0 +1,38 @@
+#include <assert.h>
+#include "bitmap.h"
+
+// Define  window
+SimpleWindow W1("Window One", 15.0, 9.0, Position(1.0, 1.0));
+
+// Define a bitmap object
+BitMap W1Bmp(W1);
+
+// W1MouseClick(): call back function for Window one
+int W1MouseClick(const Position &p) {
+	// Erase the bitmap
+	W1Bmp.Erase();
+	// Set its new position and display it
+	W1Bmp.SetPosition(p);
+	W1Bmp.Draw();
+	return 1;
+}
+
+int ApiMain() {
+
+	// Open the windows
+	W1.Open();
+	assert(W1.GetStatus() == WindowOpen);
+
+	// Load the images
+	W1Bmp.Load("sohoni.xpm");
+	assert(W1Bmp.GetStatus() == BitMapOkay);
+
+	// Display the bit maps at a starting position
+	W1Bmp.SetPosition(Position(1.0, 1.0));
+	W1Bmp.Draw();
+
+	// Register the call backs for each window
+	W1.SetMouseClickCallback(W1MouseClick);
+	return 0;
+}
+

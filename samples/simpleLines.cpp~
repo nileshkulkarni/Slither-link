@@ -1,0 +1,35 @@
+
+//
+// lines.cpp -- Demonstrates polygons, patterns of lines, 
+//             
+//
+// by Matthew Weathers, 25-Feb-2003
+
+#include <ezwin.h>
+#include <cassert>
+#include "rect.h"
+
+// Create a 10cm x 10cm window, with title "Lines"
+SimpleWindow MyWindow("Lines", 10.0, 10.0,
+                       Position(3.0, 1.0));
+
+// ApiMain(): create a window and display some shapes
+int ApiMain() {
+  MyWindow.Open();
+  assert(MyWindow.GetStatus() == WindowOpen);
+
+  float x,y;
+  float i,j;
+
+  // Some Lines
+
+  for(x=0.0;x<10.0;x+=0.1) {
+//    MyWindow.RenderLine(Position(x,0.0), Position(0.0,10.0-x),
+//                        Black, 0.0);
+//    MyWindow.RenderLine(Position(10.0,x), Position(10.0-x,10.0),
+//                        Red, 0.0);
+//      MyWindow.RenderLine(Position(x,0.0), Position(x+0.001,10.0),
+//                        Black, 0.0);
+      MyWindow.RenderLine(Position(x+0.005,x+0.005), Position(x+0.005,x+0.005),Red, 0.0);
+  }    
+}
